@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Project: Rock Paper Scissors</title>
+</head>
+<body>
+
+<script>
+
+let myArray = ["ROCK", "PAPER", "SCISSORS"];
+let pick = myArray[Math.floor(Math.random() * myArray.length)];
+
+
+let playerSelection = prompt("Choose Rock Paper or Scissors !");
+let res = playerSelection.toUpperCase();
+
+function printpicks() {
+    console.log("You chose " + res + " !");
+    if (res == "ROCK" || res == "PAPER" || res == "SCISSORS") {console.log("Computer chose " + pick + " !");} 
+    else {console.log("Error! Not accepted!");}
+}
+
+function playRound() {
+    if (res == pick) {console.log("Nobody wins!")}
+else if ((res == "ROCK" && pick == "PAPER") || (res == "SCISSORS" && pick == "ROCK") || (res == "PAPER" && pick == "SCISSORS")) {console.log("You Lose! " +res+" beats "+ pick)}
+else if ((res == "ROCK" && pick == "SCISSORS") || (res == "SCISSORS" && pick == "PAPER") || (res == "PAPER" && pick == "ROCK")) {console.log("You Win! " +res+" beats "+ pick)}
+else {console.log("Undecided yet")}
+}
+
+printpicks();
+playRound()
+</script>
+</body>
+</html>
